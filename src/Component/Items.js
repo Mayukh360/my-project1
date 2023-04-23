@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Item.css";
+import classes from "./Delete.module.css"
 import Form from "./Form";
 
 
@@ -40,7 +41,7 @@ export default function Items() {
         {electronicsItems.map((item, index) => (
           <div key={index} className="item">
             <div className="item"> <p>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</p>
-              <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
+              <button className={classes.dltbutton} onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
 
@@ -48,14 +49,14 @@ export default function Items() {
         {foodItems.map((item, index) => (
           <div key={index} className="item">
             <div className="item"> <p>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</p>
-              <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
+              <button className={classes.dltbutton} onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
         <li><h3>Skincare</h3></li>
         {skinCareItems.map((item, index) => (
           <div key={index} className="item" >
             <div className="item" > <p>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</p>
-              <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
+              <button className={classes.dltbutton} onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
       </ul>
