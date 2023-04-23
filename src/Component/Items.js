@@ -29,10 +29,7 @@ export default function Items() {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(id);
-    console.log(price);
-    console.log(name);
-    console.log(category);
+   
     const item = {
       id: id,
       price: price,
