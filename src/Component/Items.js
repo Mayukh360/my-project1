@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import "./Item.css";
+
 
 export default function Items() {
   const [id, setId] = useState();
@@ -44,7 +46,7 @@ export default function Items() {
     setPrice('');
     setName('');
     setCategory('');
-    window.location.reload();
+    fetchItems();
   };
 
   const fetchItems = () => {
@@ -58,7 +60,7 @@ export default function Items() {
   }
 
   // Call the fetchItems function on component mount to fetch and display items from local storage
-  React.useEffect(() => {
+  useEffect(() => {
     fetchItems();
   }, []);
 
@@ -89,23 +91,23 @@ export default function Items() {
         <label>Products :</label>
         <li><h1>Electronics</h1></li>
         {electronicsItems.map((item, index) => (
-          <div key={index}>
-            <div> <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
+          <div key={index} className="item">
+            <div className="item"> <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
               <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
 
         <li><h1>Food</h1></li>
         {foodItems.map((item, index) => (
-          <div key={index}>
-            <div> <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
+          <div key={index} className="item">
+            <div className="item"> <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
               <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
         <li><h1>Skincare</h1></li>
         {skinCareItems.map((item, index) => (
-          <div key={index}>
-            <div> <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
+          <div key={index} className="item" >
+            <div className="item" > <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
               <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
