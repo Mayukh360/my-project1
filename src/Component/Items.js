@@ -30,30 +30,31 @@ export default function Items() {
     fetchItems();
   }
 
+
   return (
     <div>
       <Form onFetch={fetchItems} />
       <ul>
-        <label>Products :</label>
-        <li><h1>Electronics</h1></li>
+        <h1>Products :</h1>
+        <li><h3>Electronics</h3></li>
         {electronicsItems.map((item, index) => (
           <div key={index} className="item">
-            <div className="item"> <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
+            <div className="item"> <p>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</p>
               <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
 
-        <li><h1>Food</h1></li>
+        <li><h3>Food</h3></li>
         {foodItems.map((item, index) => (
           <div key={index} className="item">
-            <div className="item"> <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
+            <div className="item"> <p>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</p>
               <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
-        <li><h1>Skincare</h1></li>
+        <li><h3>Skincare</h3></li>
         {skinCareItems.map((item, index) => (
           <div key={index} className="item" >
-            <div className="item" > <h4>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</h4>
+            <div className="item" > <p>Product ID: {JSON.parse(item).id}---- Product Name: {JSON.parse(item).name}---- Product Price: {JSON.parse(item).price}</p>
               <button onClick={() => deleteItem(JSON.parse(item).id)}>Delete</button></div>
           </div>
         ))}
